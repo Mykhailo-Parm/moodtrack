@@ -12,7 +12,7 @@ export default function Page() {
     {
       date: "4 Feb. 2024",
       moodIcon: <BiHappy />,
-      moodColor: "bg-golden-yellow-600",
+      moodColor: "bg-very-happy",
       activities: "sport, shopping, homework",
       emotions: "sadness, rejection, happiness",
       note: "Had a productive day with mixed emotions but overall happy.",
@@ -20,7 +20,7 @@ export default function Page() {
     {
       date: "5 Feb. 2024",
       moodIcon: <BiSmile />,
-      moodColor: "bg-mint-green-600",
+      moodColor: "bg-happy",
       activities: "reading, walking",
       emotions: "contentment, relaxation",
       note: "A peaceful and relaxed day with some light reading.A peaceful and relaxed day with some light reading.A peaceful and relaxed day with some light reading.A peaceful and relaxed day with some light reading.A peaceful and relaxed day with some light reading.A peaceful and relaxed day with some light reading.A peaceful and relaxed day with some light reading.A peaceful and relaxed day with some light reading.A peaceful and relaxed day with some light reading.",
@@ -28,7 +28,7 @@ export default function Page() {
     {
       date: "6 Feb. 2024",
       moodIcon: <MdOutlineSentimentNeutral />,
-      moodColor: "bg-gray-600",
+      moodColor: "bg-okay",
       activities: "work, gym",
       emotions: "neutrality, fatigue",
       note: "Felt okay but a bit drained after the gym session.",
@@ -36,7 +36,7 @@ export default function Page() {
     {
       date: "7 Feb. 2024",
       moodIcon: <BiSad />,
-      moodColor: "bg-calm-red-600",
+      moodColor: "bg-sad",
       activities: "errands, cleaning",
       emotions: "sadness, frustration",
       note: "A tough day with some frustrating errands.",
@@ -44,7 +44,7 @@ export default function Page() {
     {
       date: "8 Feb. 2024",
       moodIcon: <FaRegSadCry />,
-      moodColor: "bg-soothing-blue-600",
+      moodColor: "bg-very-sad",
       activities: "resting",
       emotions: "grief, loneliness",
       note: "A hard day emotionally, stayed in and rested.",
@@ -52,7 +52,7 @@ export default function Page() {
     {
       date: "4 Feb. 2024",
       moodIcon: <BiHappy />,
-      moodColor: "bg-golden-yellow-600",
+      moodColor: "bg-very-happy",
       activities: "sport, shopping, homework",
       emotions: "sadness, rejection, happiness",
       note: "Had a productive day with mixed emotions but overall happy.",
@@ -60,7 +60,7 @@ export default function Page() {
     {
       date: "5 Feb. 2024",
       moodIcon: <BiSmile />,
-      moodColor: "bg-mint-green-600",
+      moodColor: "bg-happy",
       activities: "reading, walking",
       emotions: "contentment, relaxation",
       note: "A peaceful and relaxed day with some light reading.A peaceful and relaxed day with some light reading.A peaceful and relaxed day with some light reading.A peaceful and relaxed day with some light reading.A peaceful and relaxed day with some light reading.A peaceful and relaxed day with some light reading.A peaceful and relaxed day with some light reading.A peaceful and relaxed day with some light reading.A peaceful and relaxed day with some light reading.",
@@ -68,7 +68,7 @@ export default function Page() {
     {
       date: "6 Feb. 2024",
       moodIcon: <MdOutlineSentimentNeutral />,
-      moodColor: "bg-gray-600",
+      moodColor: "bg-okay",
       activities: "work, gym",
       emotions: "neutrality, fatigue",
       note: "Felt okay but a bit drained after the gym session.",
@@ -76,7 +76,7 @@ export default function Page() {
     {
       date: "7 Feb. 2024",
       moodIcon: <BiSad />,
-      moodColor: "bg-calm-red-600",
+      moodColor: "bg-sad",
       activities: "errands, cleaning",
       emotions: "sadness, frustration",
       note: "A tough day with some frustrating errands.",
@@ -84,7 +84,7 @@ export default function Page() {
     {
       date: "8 Feb. 2024",
       moodIcon: <FaRegSadCry />,
-      moodColor: "bg-soothing-blue-600",
+      moodColor: "bg-very-sad",
       activities: "resting",
       emotions: "grief, loneliness",
       note: "A hard day emotionally, stayed in and rested.",

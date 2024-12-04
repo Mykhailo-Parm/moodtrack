@@ -15,22 +15,22 @@ export default function Sidebar() {
         </h1>
       </div>
 
-      <hr className="border-gray-400" />
+      <hr className="border-secondary" />
 
-      <div className=" flex flex-col text-xl gap-5 justify-center items-center bg-azure-800 rounded-md text-gray-400">
+      <div className=" flex flex-col text-xl gap-5 justify-center items-center bg-azure-800 rounded-md text-secondary">
         <SidebarLinks />
       </div>
 
-      <hr className="border-gray-400" />
+      <hr className="border-secondary" />
 
-      <div className=" flex flex-col gap-3 justify-center items-center text-lg text-gray-400">
+      <div className=" flex flex-col gap-3 justify-center items-center text-lg text-secondary">
         <span>Mykhailo Parm</span>
         <span>mykhailo.parm.dev@gmail.com</span>
       </div>
 
-      <hr className="border-gray-400" />
+      <hr className="border-secondary" />
 
-      <div className="text-gray-400 text-2xl flex items-center p-3 bg-azure-800 rounded-md">
+      <div className="text-secondary text-2xl flex items-center p-3 bg-azure-800 rounded-md">
         <div className="w-full cursor-pointer bg-calm-red-800 px-5 py-2 rounded-xl hover:bg-calm-red-700 hover:text-white flex flex-row items-center gap-2">
           <RiLogoutBoxLine />
           Log out
