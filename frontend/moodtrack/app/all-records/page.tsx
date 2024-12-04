@@ -98,7 +98,7 @@ export default function Page() {
       <div className="w-full p-5 rounded-xl">
         <h1 className="text-5xl text-center">All your mood records</h1>
       </div>
-      <div className="flex flex-col gap-5 overflow-y-scroll">
+      <div className="flex flex-col gap-5 overflow-y-scroll mt-10">
         {records.map((record, index) => (
           <div
             key={index}
