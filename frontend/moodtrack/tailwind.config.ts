@@ -80,6 +80,17 @@ export default {
         "golden-yellow-900": "#5f3e06",
         "golden-yellow-950": "#3d2803",
         "golden-yellow-1000": "#1f1401",
+
+        // Emotions Palette
+        "very-happy": "#f6b51a",
+        happy: "#6fd793",
+        okay: "#52b4f6",
+        sad: "#9474d7",
+        "very-sad": "#8f2926",
+
+        // Main Paleette
+        secondary: "#cbd5e0",
+        "secondary-darker": "#2d3748",
       },
       fontFamily: {
         shadows: "var(--font-shadows-into-light-two)",

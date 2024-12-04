@@ -1,15 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { BiHappy, BiSmile, BiSad } from "react-icons/bi";
 import { MdOutlineSentimentNeutral } from "react-icons/md";
 import { FaRegSadCry } from "react-icons/fa";
 
 export default function Page() {
-  // State to track which record is expanded
   const [expandedRecord, setExpandedRecord] = useState<number | null>(null);
 
-  // Sample data for the records
   const records = [
     {
       date: "4 Feb. 2024",
