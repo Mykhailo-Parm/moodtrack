@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { RiLogoutBoxLine } from "react-icons/ri";
 import { TbMoodHeart } from "react-icons/tb";
-import SidebarLinks from "./SidebarLinks";
+import { SidebarLinks } from "@/app/components/navigation";
 
 export default function Sidebar() {
   return (

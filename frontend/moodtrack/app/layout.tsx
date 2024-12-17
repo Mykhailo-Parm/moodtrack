@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Shadows_Into_Light_Two } from "next/font/google";
 import { Open_Sans } from "next/font/google";
-import Sidebar from "./components/navigation/Sidebar";
+import { Sidebar } from "@/app/components/navigation";
 
 const shadowsIntoLightTwo = Shadows_Into_Light_Two({
   weight: "400",

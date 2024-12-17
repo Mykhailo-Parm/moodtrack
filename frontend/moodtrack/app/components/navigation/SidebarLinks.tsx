@@ -5,7 +5,8 @@ import {
   RiSettings3Line,
 } from "react-icons/ri";
 import { HiOutlinePencilSquare } from "react-icons/hi2";
-import SidebarButton from "./SidebarButton";
+import { SidebarButton } from "@/app/components/navigation";
+
 export default function SidebarLinks() {
   return (
     <>
