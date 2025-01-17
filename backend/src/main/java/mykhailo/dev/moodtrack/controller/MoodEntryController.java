@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
@@ -33,6 +34,18 @@ public class MoodEntryController {
                 .map(mapStructMapper::moodEntryEntityToMoodEntryGetDTO)
                 .collect(Collectors.toList());
         return ResponseEntity.ok(moodEntryGetDTOs);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<MoodEntryGetDTO> findOne(@Valid @PathVariable Long id) {
+        Optional<MoodEntryEntity> moodEntryEntity = moodEntryService.findOneById(id);
+
+        if (moodEntryEntity.isPresent()) {
+            MoodEntryGetDTO moodEntryGetDTO = mapStructMapper.moodEntryEntityToMoodEntryGetDTO(moodEntryEntity.get());
+            return ResponseEntity.ok(moodEntryGetDTO);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
     }
 
     @PostMapping

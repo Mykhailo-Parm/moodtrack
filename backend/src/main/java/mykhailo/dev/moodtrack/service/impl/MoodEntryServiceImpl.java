@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MoodEntryServiceImpl implements MoodEntryService {
@@ -24,5 +25,10 @@ public class MoodEntryServiceImpl implements MoodEntryService {
     @Override
     public void save(MoodEntryEntity moodEntryEntity) {
         moodEntryRepository.save(moodEntryEntity);
+    }
+
+    @Override
+    public Optional<MoodEntryEntity> findOneById(Long id) {
+        return moodEntryRepository.findById(id);
     }
 }
