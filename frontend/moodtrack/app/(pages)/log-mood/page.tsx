@@ -12,6 +12,7 @@ import {
 import { MoodEntry, Mood } from "@/app/types/mood";
 import { Activity } from "@/app/types/activity";
 import { Emotion } from "@/app/types/emotion";
+import { postMoodEntry } from "@/app/lib/api";
 
 export default function Page() {
   const [overallMood, setOverallMood] = useState<Mood>(2);
@@ -36,12 +37,10 @@ export default function Page() {
   const handleActivityClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const activityName = (event.target as HTMLDivElement).textContent || "";
 
-    const activity: Activity = {name: activityName};
-
-    if (activities.includes(activity)) {
-      setActivities(activities.filter((a) => a !== activity));
+    if (activities.some((a) => a.name === activityName)) {
+      setActivities(activities.filter((a) => a.name !== activityName));
     } else {
-      setActivities([...activities, activity]);
+      setActivities([...activities, { name: activityName }]);
     }
   };
 
@@ -52,12 +51,10 @@ export default function Page() {
   const handleEmotionClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const emotionName = (event.target as HTMLDivElement).textContent || "";
 
-    const emotion: Emotion = {name: emotionName};
-
-    if (emotions.includes(emotion)) {
-      setEmotions(emotions.filter((a) => a !== emotion));
+    if (emotions.some((e) => e.name === emotionName)) {
+      setEmotions(emotions.filter((e) => e.name !== emotionName));
     } else {
-      setEmotions([...emotions, emotion]);
+      setEmotions([...emotions, { name: emotionName }]);
     }
   };
 
@@ -76,10 +73,12 @@ export default function Page() {
       activities: activities,
       emotions: emotions,
       personalNote,
-      createdAt: new Date().toISOString(),
     };
-
-    console.log(data);
+    try {
+      await postMoodEntry(data);
+    } catch (error){
+      console.log(error);
+    }
   };
 
   return (
@@ -87,7 +86,7 @@ export default function Page() {
       <div className="w-full p-5 rounded-xl mb-5">
         <h1 className="text-5xl text-center">Log your mood</h1>
       </div>
-      <div className="overflow-y-scroll flex flex-col gap-5">
+      <div className="flex flex-col gap-5">
         <div className="grid grid-cols-3 grid-rows-2 gap-5 text-2xl">
           {/* Mood Slider */}
           <MoodSlider
@@ -124,7 +123,7 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <SubmitButton onSubmit={handleSubmit}/>
+      <SubmitButton onSubmit={handleSubmit} />
     </div>
   );
 }
