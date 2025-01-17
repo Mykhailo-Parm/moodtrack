@@ -1,13 +1,11 @@
-import { Activity } from "./activity";
-import { Emotion } from "./emotion";
-
 export interface MoodEntry {
-  id?: number,
-  overallMood: Mood,
-  levelOfSleep: number,
-  activities: Activity[],
-  emotions: Emotion[],
-  personalNote: string,
+  id?: number;
+  overallMood: Mood;
+  levelOfSleep: number;
+  activities: string[];
+  emotions: string[];
+  personalNote: string;
+  createdAt?: string;
 }
 
 export type Mood = 0 | 1 | 2 | 3 | 4;

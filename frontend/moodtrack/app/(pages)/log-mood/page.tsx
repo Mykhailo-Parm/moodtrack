@@ -10,15 +10,13 @@ import {
   EmotionSelector,
 } from "@/app/components/forms/log-mood";
 import { MoodEntry, Mood } from "@/app/types/mood";
-import { Activity } from "@/app/types/activity";
-import { Emotion } from "@/app/types/emotion";
 import { postMoodEntry } from "@/app/lib/api";
 
 export default function Page() {
   const [overallMood, setOverallMood] = useState<Mood>(2);
   const [levelOfSleep, setLevelOfSleep] = useState<number>(0);
-  const [activities, setActivities] = useState<Activity[]>([]);
-  const [emotions, setEmotions] = useState<Emotion[]>([]);
+  const [activities, setActivities] = useState<string[]>([]); // Updated type
+  const [emotions, setEmotions] = useState<string[]>([]); // Updated type
   const [personalNote, setPersonalNote] = useState<string>("");
 
   const handleMoodSliderChange = (
@@ -37,10 +35,10 @@ export default function Page() {
   const handleActivityClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const activityName = (event.target as HTMLDivElement).textContent || "";
 
-    if (activities.some((a) => a.name === activityName)) {
-      setActivities(activities.filter((a) => a.name !== activityName));
+    if (activities.includes(activityName)) {
+      setActivities(activities.filter((a) => a !== activityName));
     } else {
-      setActivities([...activities, { name: activityName }]);
+      setActivities([...activities, activityName]);
     }
   };
 
@@ -51,10 +49,10 @@ export default function Page() {
   const handleEmotionClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const emotionName = (event.target as HTMLDivElement).textContent || "";
 
-    if (emotions.some((e) => e.name === emotionName)) {
-      setEmotions(emotions.filter((e) => e.name !== emotionName));
+    if (emotions.includes(emotionName)) {
+      setEmotions(emotions.filter((e) => e !== emotionName));
     } else {
-      setEmotions([...emotions, { name: emotionName }]);
+      setEmotions([...emotions, emotionName]);
     }
   };
 
@@ -63,20 +61,21 @@ export default function Page() {
   };
 
   const handleNoteChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setPersonalNote(event.target.value); // Updates the state with the text value
+    setPersonalNote(event.target.value);
   };
 
   const handleSubmit = async () => {
     const data: MoodEntry = {
       overallMood: overallMood,
       levelOfSleep: levelOfSleep,
-      activities: activities,
-      emotions: emotions,
+      activities: activities, // Works directly with strings
+      emotions: emotions, // Works directly with strings
       personalNote,
     };
     try {
+      console.log(data)
       await postMoodEntry(data);
-    } catch (error){
+    } catch (error) {
       console.log(error);
     }
   };
@@ -95,7 +94,7 @@ export default function Page() {
           />
           {/* Activities Section */}
           <ActivitySelector
-            selectedActivities={activities.map((activity) => activity.name)}
+            selectedActivities={activities} // Directly passes the array of strings
             onActivityClick={handleActivityClick}
             onClearActivities={handleClearAllActivities}
           />
@@ -108,7 +107,7 @@ export default function Page() {
         <div className="grid grid-cols-2 grid-rows-1 gap-5 text-2xl">
           {/* Emotions Section */}
           <EmotionSelector
-            selectedEmotions={emotions.map((emotion) => emotion.name)}
+            selectedEmotions={emotions} // Directly passes the array of strings
             onEmotionClick={handleEmotionClick}
             onClearEmotions={handleClearAllEmotions}
           />
